@@ -184,3 +184,212 @@ if ( ! defined( 'ABSPATH' ) ) {
 - [ ] Access the WordPress install via WP-CLI. Run the following command: wp plugin deactivate offending-plugin.
 - [ ] Access site files via FTP and navigate to /wp-content/plugins/. Delete the folder of the plugin that you would like to disable or simply rename it.
 - [ ] Use phpMyAdmin to change the wp_options table's active_plugins option value to a:0:{}.
+
+#### 21. The WordPress REST API is designed to receive and respond to particular types of requests using basic HTML methods. For example, a request to upload a PHP file into a particular folder on a server might look like the code POST /folder/_file.php. Based on this code, what would you call /folder/_file.php (in REST API terms)?
+
+1. [ ] schema
+2. [ ] route
+3. [ ] response
+4. [x] request
+
+#### 22. Which WP-CLI command would you use to manage the capabilities of a user role?
+
+1. [ ] wp admin
+2. [ ] wp manage
+3. [ ] wp cap
+4. [x] wp role
+
+#### 23. What technique would you use to secure data before rendering it to a user?
+
+1. [ ] escape and sanitize
+2. [ ] validate and escape
+3. [x] validate and sanitize
+4. [ ] escape and secure
+
+#### 24. If your WordPress site is seriously compromised, what is the best course of action to return your site to good health?
+
+1. [ ] Determine the date of the attack and restore your site to a backup point prior to that date.
+2. [x] Hire a third-party service to clean up your site because it is difficult for someone who is not a WordPress security expert to find and remove all traces of an attack.
+3. [ ] Manually delete suspicious files on the server and delete any database tables that are not core WordPress.
+4. [ ] Change your hosting password, your WordPress admin password, and your database password.
+
+**Explanation:** It's not the cheapest, but it's the most reliable. Restoring the backup might not help if you have backdoor scripts installed outside of WP directory.
+
+
+#### 25. If you wanted to register a custom post type, which hook would you use?
+
+1. [x] register_post_type
+2. [ ] add_meta_box
+3. [ ] wp_head
+4. [ ] init
+
+#### 26. Which of the following is NOT a suggested security improvement for your WordPress website?
+
+1. [ ] The site should communicate with WordPress.org.
+2. [ ] Remove inactive themes.
+3. [ ] Do not output debug information.
+4. [x] WordPress updates are accomplished manually only.
+
+**Explanation:** Communicating with WordPress.org is needed for detecting new versions.
+
+#### 27. The Block API enables developers to register custom blocks in themes or plugins. How would you register a custom block?
+
+1. [ ] Use the registerBlockName() function.
+2. [ ] Use the createGutenBlock() function.
+3. [ ] Use a block template.
+4. [x] Use the registerBlockType() function.
+
+#### 28. Which software development principle, often used in WordPress, aims to reduce the repetition of code?
+
+1. [ ] RRR
+2. [ ] WET
+3. [x] DRY
+4. [ ] KISS
+
+#### 29. In a standard template file, how often does the WordPress Loop run?
+
+1. [ ] It runs once per post in the database.
+2. [ ] It runs once.
+3. [ ] The Loop doesn't run in template files.
+4. [x] It runs once per fetched post.
+
+#### 30. Which is NOT a suggested performance improvement for your WordPress website?
+
+1. [ ] The site should run the most recent version of WordPress.
+2. [ ] Remove or inactivate unnecessary plugins.
+3. [x] UTF8 is supported.
+4. [ ] Choose a very recent version of PHP.
+
+**Explanation:** New versions usually come with speed improvements. Inactivating plugins improves performance. By exclusion, it's UTF8.
+
+#### 31. On a regular WordPress install, what is the difference between transients and the object cache?
+
+1. [x] Transients are persistent and write to the wp_options. The object cache persists only for the particular page load.
+2. [ ] Transients are stored in the WordPress database. The object cache is stored on the server where the WordPress install is located.
+3. [ ] Transients are available for the duration of a user session and apply to all page components. The object cache is available only for scripts.
+4. [ ] Transients persist only for the particular page load. The object cache is persistent and writes to the wp_options table.
+
+#### 32. You can harden your WordPress site security by adding __ to your wp-config.php file?
+
+1. [ ] database usernames and passwords
+2. [x] unique keys and salts
+3. [ ] accessibility
+4. [ ] documentation
+
+#### 33. If you have pretty permalinks enabled on a WordPress site, the REST API index is exposed by appending what to the end of the site URL? (for example, http://example.com/answer/) Note that the index provides information regarding which routes are available for that particular WordPress install.
+
+1. [x] `http://example.com/wp-json/`
+2. [ ] `http://example.com/wp-admin/`
+3. [ ] `http://example.com/wp-rest/`
+4. [ ] `http://example.com/wp-rest-api/`
+
+#### 34. In your wp-config.php file, you've added the following line of code. What does it do?
+`define( 'DISALLOW_FILE_EDIT', true );`
+
+1. [ ] prevents any non-admin user from directly editing theme or plugin files
+2. [x] disables the theme and plugin editor in the WordPress admin
+3. [ ] disables the ability to edit core WordPress files from either within the WordPress admin or via direct file access
+4. [ ] sets read-only permissions on all files in the WordPress install
+
+#### 35. Which of the following must have underlined links in order to meet WCAG 2.0 accessibility standards?
+
+1. [ ] links on images
+2. [ ] links in user interface controls
+3. [ ] links in a nav bar
+4. [x] links in paragraph text
+
+#### 36. Review the HTML on line 1. The goal of the PHP on line 2 is to extract the field value and assign it to a variable prior to inserting into the database. What is wrong with this PHP code?
+
+```php
+<input type="text" id="title" name="title" />
+$title = $_POST[ 'title' ];
+```
+
+1. [ ] The code sample does not use the GET method. It should be wrapped in the get_post_field() function and look like this $title = get_post_field( $GET[ 'title' ] );
+2. [x] The code sample does not sanitize the form data. It should use the sanitize_text_field() function and look like this: $title = sanitize_text_field( $_POST[ 'title' ] );
+3. [ ] There is no error. The code follows WordPress best practices.
+4. [ ] The code sample does not allow for translation. It should use a translation function and look like this: $title = __( $_POST[ 'title' ];
+
+#### 37. Which of these CSS classs naming convention is correct according to WordPress CSS Coding Standards?
+
+1. [x] .selector-name
+2. [ ] .selector_name
+3. [ ] .selectorName
+4. [ ] div.selector_name
+
+#### 38. What are transients?
+
+1. [ ] short database queries
+2. [x] a way to cache information
+3. [ ] plugins used for quick debugging
+4. [ ] post draft stored in the database
+
+#### 39. When should you edit core WordPress files?
+
+1. [ ] when there is no plugin available to make a customization you need
+2. [ ] when you need to add a custom page template
+3. [ ] when you need to add a custom script to the header or footer of every page in a site
+4. [x] You should never edit WordPress core.
+
+#### 40. Which Wordpress conditional would you use to determine if you were on a single page?
+
+1. [ ] is_archive()
+2. [ ] is_page()
+3. [ ] is_page_template()
+4. [x] is_single()
+
+#### 41. Which of these are the minimum files required to make a child theme?
+
+1. [ ] index.php functions.php
+2. [ ] index.php style.css script.js
+3. [ ] functions.php style.css script.js
+4. [x] functions.php style.css
+
+#### 42. In the WordPress template hierarchy, which file could not be used to display an archive?
+
+1. [ ] archive.php
+2. [x] index.php
+3. [ ] page.php
+4. [ ] category.php
+
+#### 43. Why can't you modify the query in a template page?
+
+1. [ ] The query can only be run inside the Loop.
+2. [x] You can modify the query in a template page if you use pre_get_posts().
+3. [ ] According to WordPress best practices, the query should only be modified in functions.php.
+4. [ ] Due to execution order, the query has already run by the time a template is loaded.
+
+#### 44. For the majority of modern themes, what is the standard method used to customize various details of site appearance and features, such as changing the site description or adding a logo and favicons?
+
+1. [ ] WordPress settings
+2. [x] Customizer
+3. [ ] wp-config.php
+4. [ ] Theme settings
+
+#### 45. How would you write a text string containing "Hello World!" in a way that makes it possible for someone else to translate the string into a different language?
+
+1. [ ] `apply_filters( 'Hello World!', 'mytextdomain' );`
+2. [ ] `esc_html( 'Hello World!', 'mytextdomain' );`
+3. [ ] `$string = "Hello World!";`
+4. [x] `__( 'Hello World!', 'mytextdomain' );`
+
+#### 46. You would use a post instead of a page when the content is _.
+
+1. [ ] for a top-level menu item
+2. [ ] nested (has a parent/child relationship with another piece of content)
+3. [x] when the content is part of a blog.
+4. [ ] evergreen
+
+#### 47. Which of these does not impact your site speed?
+
+1. [ ] caching
+2. [ ] your web host
+3. [x] inactive plugins
+4. [ ] content delivery network (CDN)
+
+#### 48. What can you not configure via wp-config.php?
+
+1. [x] changing the default user role
+2. [ ] changing the default wp_table prefix
+3. [ ] changing your site or WordPress address
+4. [ ] changing the default number of post revisions
